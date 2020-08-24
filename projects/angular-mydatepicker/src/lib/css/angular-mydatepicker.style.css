@@ -287,11 +287,19 @@
 }
 
 .myDpFooter {
-  height: calc(100% - 60px);
+  height: calc(100% - 80px);
+}
+
+.myDpFooter.myDpHeader {
+  height: calc(100% - 130px);
 }
 
 .myDpNoFooter {
-  height: calc(100% - 30px);
+  height: calc(100% - 50px);
+}
+
+.myDpNoFooter.myDpHeader {
+  height: calc(100% - 100px);
 }
 
 .myDpCalTable,
@@ -348,7 +356,7 @@
 }
 
 .myDpMonthNbr {
-  font-size: 10px; 
+  font-size: 10px;
   display: block;
 }
 
@@ -364,13 +372,29 @@
   color: #999;
 }
 
+.title {
+  display: flex;
+  height: 50px;
+  background-color: #fff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
 .myDpMonthYearSelBar {
   display: flex;
-  height: 30px;
+  height: 50px;
   background-color: #fff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
+
+.title + .myDpMonthYearSelBar {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 
 .myDpPrevBtn {
   margin-left: 10px;
@@ -400,7 +424,7 @@
   padding: 0;
   border: none;
   line-height: 30px;
-  height: 28px;
+  height: 48px;
   margin-top: 1px;
   color: #000;
   outline: none;
@@ -540,9 +564,9 @@
 }
 
 .myDpIconLeftArrow:before {
-  content: "\e800";
+  content: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.7 33.522c1.116 1.136 2.278 2.224 3.417 3.338l3.491 3.26c2.337 2.164 4.73 4.267 7.093 6.4 2.42 2.076 4.805 4.188 7.25 6.233 2.445 2.047 4.9 4.082 7.431 6.038a1.004 1.004 0 001.36-1.466c-2.137-2.378-4.348-4.677-6.57-6.963-2.22-2.288-4.504-4.51-6.752-6.768-2.303-2.2-4.578-4.43-6.908-6.6l-3.51-3.24c-.639-.563-1.272-1.131-1.907-1.697.635-.566 1.268-1.135 1.907-1.698l3.51-3.24c2.34-2.16 4.625-4.38 6.91-6.597 2.268-2.238 4.537-4.475 6.752-6.77l3.32-3.443c1.082-1.175 2.187-2.325 3.248-3.521a1.005 1.005 0 00-1.36-1.466c-1.273.97-2.5 1.988-3.75 2.98l-3.682 3.056c-2.452 2.039-4.85 4.136-7.25 6.232-2.382 2.115-4.764 4.23-7.092 6.402l-3.49 3.26c-1.14 1.115-2.302 2.203-3.419 3.339a2.088 2.088 0 000 2.93z' fill='%23021B41' /%3E%3C/svg%3E");
 }
 
 .myDpIconRightArrow:before {
-  content: "\e801";
+  content: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M47.3 30.478c-1.116-1.136-2.278-2.224-3.417-3.338l-3.491-3.26c-2.337-2.164-4.73-4.267-7.093-6.4-2.42-2.076-4.805-4.188-7.25-6.233-2.445-2.047-4.9-4.082-7.431-6.038a1.004 1.004 0 00-1.36 1.466c2.137 2.378 4.348 4.677 6.57 6.963 2.22 2.288 4.504 4.51 6.752 6.768 2.303 2.2 4.578 4.43 6.908 6.6l3.51 3.24c.639.563 1.272 1.131 1.907 1.697-.635.566-1.268 1.135-1.907 1.698l-3.51 3.24c-2.34 2.16-4.625 4.38-6.91 6.597-2.268 2.238-4.537 4.475-6.752 6.77l-3.32 3.443c-1.082 1.175-2.187 2.325-3.248 3.521a1.005 1.005 0 001.36 1.466c1.273-.97 2.5-1.988 3.75-2.98l3.682-3.056c2.452-2.039 4.85-4.136 7.25-6.232 2.382-2.115 4.764-4.23 7.092-6.402l3.49-3.26c1.14-1.115 2.302-2.203 3.419-3.339a2.088 2.088 0 000-2.93z' fill='%23021B41' /%3E%3C/svg%3E");
 }

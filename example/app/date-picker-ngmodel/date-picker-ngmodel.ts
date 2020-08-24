@@ -35,8 +35,8 @@ export class DatePickerNgmodel implements OnInit {
     disableWeekdays: [],
     markDates: [],
     markWeekends: <IMyMarkedDate>{},
-    selectorHeight: '266px',
-    selectorWidth: '266px',
+    selectorHeight: '500px',
+    selectorWidth: '500px',
     closeSelectorOnDateSelect: true,
     closeSelectorOnDocumentClick: true,
     showMonthNumber: true,
@@ -51,7 +51,8 @@ export class DatePickerNgmodel implements OnInit {
       {
         selector: '',
         styles: ''
-      }
+      },
+      title: 'Sample title'
   };
 
   @ViewChild('dp') ngxdp: AngularMyDatePickerDirective;
@@ -68,7 +69,7 @@ export class DatePickerNgmodel implements OnInit {
     defMonth: '',
     overrideSelection: false
   };
-  
+
   public selectorSizes: Array<string> = new Array('266px x 266px', '200px x 220px', '260px x 290px');
   public defaultViews: Array<string> = new Array('date', 'month', 'year');
   public calAnimations: Array<string> = new Array('None', 'Fade', 'ScaleTop-ScaleCenter', 'ScaleCenter-ScaleTop', 'Rotate', 'FlipDiagonal');
@@ -333,12 +334,12 @@ export class DatePickerNgmodel implements OnInit {
 
     d.setDate(d.getDate() + 1);
     let today: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
-    
+
     d.setDate(d.getDate() + 1);
     let tomorrow: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
 
     copy.disableDates = checked ? [{dates: [yesterday, today, tomorrow], styleClass: 'disabledDates'}] : [];
-    copy.stylesData = 
+    copy.stylesData =
     {
       selector: 'dp1',
       styles: this.disableAndMarkOwnStyles()
@@ -356,16 +357,16 @@ export class DatePickerNgmodel implements OnInit {
 
     d.setDate(d.getDate() + 1);
     let today: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
-    
+
     d.setDate(d.getDate() + 1);
     let tomorrow: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
 
     copy.markDates = checked ? [
-      {dates: [yesterday], styleClass: 'pilatesDates'}, 
+      {dates: [yesterday], styleClass: 'pilatesDates'},
       {dates: [today], styleClass: 'boxingDates'},
       {dates: [tomorrow], color: 'red', styleClass: 'pilatesDatesAndBoxingDates'}
     ] : [];
-    copy.stylesData = 
+    copy.stylesData =
     {
       selector: 'dp1',
       styles: this.disableAndMarkOwnStyles()
@@ -450,7 +451,7 @@ export class DatePickerNgmodel implements OnInit {
     copy.stylesData.selector = 'dp1';
     copy.selectorHeight = '266px';
     copy.selectorWidth = '266px';
- 
+
     if (color === 'Default') {
       copy.stylesData.styles = '';
     }
@@ -501,8 +502,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #212529;
       }
-      .dp1 .myDpMarkCurrDay, 
-      .dp1 .myDpMarkCurrMonth, 
+      .dp1 .myDpMarkCurrDay,
+      .dp1 .myDpMarkCurrMonth,
       .dp1 .myDpMarkCurrYear {
           border-bottom: 2px solid #6c757d;
       }
@@ -512,8 +513,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpHighlight {
           color: #cd5c5c;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #ccc;
           color: #222;
@@ -576,8 +577,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #add8e6;
       }
-      .dp1 .myDpMarkCurrDay, 
-      .dp1 .myDpMarkCurrMonth, 
+      .dp1 .myDpMarkCurrDay,
+      .dp1 .myDpMarkCurrMonth,
       .dp1 .myDpMarkCurrYear {
           border-bottom: 2px solid #3855c1;
       }
@@ -587,8 +588,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpHighlight {
           color: #cd5c5c;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #add8e6;
           color: #3855c1;
@@ -650,8 +651,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #90EE90;
       }
-      .dp1 .myDpMarkCurrDay, 
-      .dp1 .myDpMarkCurrMonth, 
+      .dp1 .myDpMarkCurrDay,
+      .dp1 .myDpMarkCurrMonth,
       .dp1 .myDpMarkCurrYear {
           border-bottom: 2px solid #228B22;
       }
@@ -661,8 +662,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpHighlight {
           color: #cd5c5c;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #90EE90;
           color: #228B22;
@@ -724,8 +725,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #F08080;
       }
-      .dp1 .myDpMarkCurrDay, 
-      .dp1 .myDpMarkCurrMonth, 
+      .dp1 .myDpMarkCurrDay,
+      .dp1 .myDpMarkCurrMonth,
       .dp1 .myDpMarkCurrYear {
           border-bottom: 2px solid #800000;
       }
@@ -735,8 +736,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpHighlight {
           color: #FF0000;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #F6B2B2;
           color: #800000;
@@ -799,16 +800,16 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #F0E68C;
       }
-      .dp1 .myDpMarkCurrDay, 
-      .dp1 .myDpMarkCurrMonth, 
+      .dp1 .myDpMarkCurrDay,
+      .dp1 .myDpMarkCurrMonth,
       .dp1 .myDpMarkCurrYear {
           border-bottom: 2px solid #DAA520;
       }
       .dp1 .myDpDisabled {
           color: #999;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #F0E68C;
           color: #DAA520;
@@ -876,8 +877,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #ddd;
       }
-      .dp1 .myDpMarkCurrDay, 
-      .dp1 .myDpMarkCurrMonth, 
+      .dp1 .myDpMarkCurrDay,
+      .dp1 .myDpMarkCurrMonth,
       .dp1 .myDpMarkCurrYear {
           border-bottom: 2px solid #fff;
       }
@@ -888,8 +889,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpHighlight {
         color: 	#960018;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #ddd;
           color: #000;
@@ -977,8 +978,8 @@ export class DatePickerNgmodel implements OnInit {
       .dp1 .myDpFooterBtn:hover {
           color: #F0E68C;
       }
-      .dp1 .myDpTableSingleDay:hover, 
-      .dp1 .myDpTableSingleMonth:hover, 
+      .dp1 .myDpTableSingleDay:hover,
+      .dp1 .myDpTableSingleMonth:hover,
       .dp1 .myDpTableSingleYear:hover {
           background-color: #F0E68C;
           color: #113B08;
