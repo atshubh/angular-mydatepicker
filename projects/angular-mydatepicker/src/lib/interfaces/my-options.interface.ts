@@ -63,6 +63,7 @@ export interface IMyOptions {
   ariaLabelPrevMonth?: string;
   ariaLabelNextMonth?: string;
   title?: string;
+  showFauxRange?: boolean;
 }
 
 export interface IAngularMyDpOptions extends IMyOptions { }

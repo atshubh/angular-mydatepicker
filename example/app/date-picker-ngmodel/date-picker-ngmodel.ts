@@ -325,6 +325,12 @@ export class DatePickerNgmodel implements OnInit {
     this.myDatePickerOptions = copy;
   }
 
+  onShowFauxRange(checked: boolean) {
+    let copy = this.getCopyOfOptions();
+    copy.showFauxRange = checked;
+    this.myDatePickerOptions = copy;
+  }
+
   onDisableOwnStyle(checked: boolean) {
     let copy = this.getCopyOfOptions();
 
@@ -445,6 +451,8 @@ export class DatePickerNgmodel implements OnInit {
 
     this.myDatePickerOptions = copy;
   }
+
+  onShowFaux
 
   onOverrideCalColor(color: string) {
     let copy = this.getCopyOfOptions();

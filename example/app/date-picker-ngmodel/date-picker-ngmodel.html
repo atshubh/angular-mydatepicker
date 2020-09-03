@@ -261,6 +261,14 @@
             </label>
         </td>
       </tr>
+      <tr>
+        <td>
+            <label>
+                  <span>Show Faux Range:&nbsp;</span>
+                  <input style="cursor: pointer" type="checkbox" (change)="onShowFauxRange($event.currentTarget.checked)" [checked]="false">
+            </label>
+        </td>
+      </tr>
     </table>
 
 
@@ -297,7 +305,7 @@
                            [(ngModel)]="model" [options]="myDatePickerOptions" [defaultMonth]="defMonth" [locale]="locale" #dp="angular-mydatepicker"
                            (dateChanged)="onDateChanged($event)" (calendarViewChanged)="onCalendarViewChanged($event)"
                            (calendarToggle)="onCalendarToggle($event)" (inputFieldChanged)="onInputFieldChanged($event)"
-                           (rangeDateSelection)="onRangeDateSelection($event)" (viewActivated)="onViewActivated($event)" 
+                           (rangeDateSelection)="onRangeDateSelection($event)" (viewActivated)="onViewActivated($event)"
                            [attr.disabled]="disabled?'':null" autocomplete="off"/>
                     <div class="input-group-append">
                       <button type="button" class="btn btn-secondary" (click)="dp.clearDate()">

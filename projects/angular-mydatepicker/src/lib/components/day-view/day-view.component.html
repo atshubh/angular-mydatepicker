@@ -9,7 +9,7 @@
     <tr *ngFor="let w of dates">
       <td class="myDpDaycellWeekNbr" *ngIf="opts.showWeekNumbers && opts.firstDayOfWeek==='mo'">{{w.weekNbr}}</td>
       <td id="d_{{d.row}}_{{d.col}}" class="d_{{d.row}}_{{d.col}} myDpDaycell {{d.markedDate.styleClass}} {{d.disabledDate.styleClass}}" *ngFor="let d of w.week"
-          [ngClass]="{'myDpRangeColor': isDateInRange(d.dateObj) || d.range,
+          [ngClass]="{'myDpRangeColor': activeFauxRangeControl ? d.range : isDateInRange(d.dateObj),
                 'myDpPrevMonth': d.cmo === prevMonthId,
                 'myDpCurrMonth':d.cmo === currMonthId && !d.disabledDate.disabled,
                 'myDpNextMonth': d.cmo === nextMonthId,

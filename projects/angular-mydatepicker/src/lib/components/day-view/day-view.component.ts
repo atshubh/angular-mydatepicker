@@ -31,6 +31,7 @@ export class DayViewComponent implements OnChanges, AfterViewInit {
   prevMonthId: number = MonthId.prev;
   currMonthId: number = MonthId.curr;
   nextMonthId: number = MonthId.next;
+  activeFauxRangeControl: boolean = false;
 
   constructor(private utilService: UtilService) { }
 
@@ -87,10 +88,18 @@ export class DayViewComponent implements OnChanges, AfterViewInit {
           day.range = this.utilService.isDateSameOrEarlier(this.selectedDateRange.begin, day.dateObj) && this.utilService.isDateSameOrEarlier(day.dateObj, cell.dateObj);
         }
       }
+    } else if(this.opts.showFauxRange && this.opts.markDates[0] && this.utilService.isInitializedDate(this.opts.markDates[0].dates[0])) {
+      this.activeFauxRangeControl = true;
+      for (const w of this.dates) {
+        for (const day of w.week) {
+          day.range = this.utilService.isDateSameOrEarlier(this.opts.markDates[0].dates[0], day.dateObj) && this.utilService.isDateSameOrEarlier(day.dateObj, cell.dateObj);
+        }
+      }
     }
   }
 
   onDayCellMouseLeave(): void {
+    this.activeFauxRangeControl = false;
     for (const w of this.dates) {
       for (const day of w.week) {
         day.range = false;
@@ -99,7 +108,13 @@ export class DayViewComponent implements OnChanges, AfterViewInit {
   }
 
   isDateInRange(date: IMyDate): boolean {
-    return this.utilService.isDateInRange(date, this.selectedDateRange);
+    return this.utilService.isDateInRange(date, this.selectedDateRange)
+    || (
+      this.opts.showFauxRange
+      && this.opts.markDates[0]
+      && this.utilService.isInitializedDate(this.opts.markDates[0].dates[0])
+      && this.utilService.isDateInRange(date, {begin: this.opts.markDates[0].dates[0], end: this.selectedDate})
+      );
   }
 
   isDateSame(date: IMyDate): boolean {
