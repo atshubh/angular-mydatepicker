@@ -1,8 +1,8 @@
 {
   "name": "@atshubh/angular-mydatepicker",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Angular datepicker and date range picker",
-  "homepage": "https://kekeh.github.io/angular-mydatepicker/",
+  "homepage": "https://github.com/atshubh/angular-mydatepicker",
   "keywords": [
     "Angular",
     "datepicker",
@@ -12,10 +12,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kekeh/angular-mydatepicker.git"
+    "url": "https://github.com/atshubh/angular-mydatepicker"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   }
 }
